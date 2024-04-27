@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<style>
+    input {
+        margin-top: 10px;
+    }
+
+    form, div {
+        margin-top: 20px;
+    }
+        
+    table {
+        border-spacing: 0px;
+    }
+</style>
+<script src="lab4.js"></script>
+</head>
+<body onload = "init()" >
+	<form>
+        Введите размер фигуры (не более 50х50):<br>
+        <input type="text" id="size"><br>
+        <input type="button" id="button" value="Построить" onclick="createTable(form.size.value)">
+        </form>
+	<form id="update">
+        <input type="hidden" id="defaultColor" value="cyan">
+        Цвет:<br>
+        <input type="text" id="colorInput" placeholder="Введите цвет"><br>
+        <input type="button" id="button" value="Обновить" onclick="updateTable(document.getElementById('colorInput').value)">
+        <br>Режим:<br>
+        <input type="radio" name="mode" value="sum" checked>Сумма чисел<br>
+        <input type="radio" name="mode" value="average">Среднее арифметическое<br>
+        <br>Цвет ячеек:<br>
+        <input type="text" id="color" placeholder="Введите цвет"><br>
+        <input type="button" id="button" value="Выполнить" onclick="processTable(form.mode.value, form.color.value)">
+        <br>Количество красных ячеек:<br>
+        <input type="text" id="limit" placeholder="Количество ячеек"><br>
+        <input type="button" id="button" value="Удалить" onclick="removeRowsWithRedCellsLimit(form.limit.value)">
+    </form>
+</body>
+</html>

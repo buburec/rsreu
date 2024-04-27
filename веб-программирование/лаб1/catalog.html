@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог кассет</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="header" id="header">
+        <ul>
+            <li><a href="index.html"><img src="images/logo.png" width="85" height="68"></a></li>
+            <li><a href="catalog.html">Каталог кассет</a></li>
+            <li><a href="rents.html">Мои аренды</a></li>
+            <li><a href="registration.html">Предложить свою кассету</a></li>
+        </ul>
+    </div>
+    <div class="description">
+        <h2>Каталог кассет</h2>
+        <p>
+            <i>Выберите кассету для аренды из предложенного списка. Арендованные кассеты можно будет отслеживать во вкладке "Мои аренды".</i>
+        </p>
+    </div> 
+    <div class="description">
+        <div class="table-container">
+            <table border="1" id="catalogTable">
+                <tr>
+                    <th>Название кассеты</th>
+                    <th>Залог</th>
+                    <th>Срок проката (в сутках)</th>
+                    <th>Стоимость проката (за сутки)</th>
+                    <th>Действия</th>
+                </tr>
+                <tr>
+                    <td>Джентельмены</td>
+                    <td>100 рублей</td>
+                    <td>2 суток</td>
+                    <td>50 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1917</td>
+                    <td>120 рублей</td>
+                    <td>1 сутки</td>
+                    <td>60 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Форрест Гамп</td>
+                    <td>80 рублей</td>
+                    <td>3 суток</td>
+                    <td>40 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Побег из Шоушенка</td>
+                    <td>150 рублей</td>
+                    <td>2 суток</td>
+                    <td>75 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Звёздные войны: Эпизод IV - Новая надежда</td>
+                    <td>90 рублей</td>
+                    <td>1 сутка</td>
+                    <td>45 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Властелин колец: Братство кольца</td>
+                    <td>110 рублей</td>
+                    <td>3 суток</td>
+                    <td>55 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Матрица</td>
+                    <td>130 рублей</td>
+                    <td>2 суток</td>
+                    <td>65 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>В джазе только девушки</td>
+                    <td>75 рублей</td>
+                    <td>1 сутка</td>
+                    <td>37.5 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Гарри Поттер и Философский камень</td>
+                    <td>140 рублей</td>
+                    <td>3 суток</td>
+                    <td>70 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Титаник</td>
+                    <td>95 рублей</td>
+                    <td>2 суток</td>
+                    <td>47.5 рублей</td>
+                    <td>
+                        <a href="JavaScript:alert('Описание фильма');">Описание</a>
+                        <a href="#">Арендовать</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="description">
+        Copyright © 2024 Пункт проката. Все права защищены.
+    </div>
+
+    <script>
+        var formData = JSON.parse(localStorage.getItem('formData'));
+        var table = document.getElementById('catalogTable');
+        var newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${formData.cassetteName}</td>
+            <td>${formData.rentalCost} рублей</td>
+            <td>${formData.rentalDays} суток</td>
+            <td>${formData.deposit} рублей</td>
+            <td>
+                <a href="#">Описание</a>
+                <a href="#">Арендовать</a>
+            </td>
+        `;
+        table.appendChild(newRow);
+        // localStorage.removeItem('formData');
+    </script>
+</body>
+</html>

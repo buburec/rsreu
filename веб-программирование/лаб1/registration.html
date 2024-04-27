@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация выдачи кассеты клиенту</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="index.html"><img src="images/logo.png" width="85" height="68"></a></li>
+            <li><a href="catalog.html">Каталог кассет</a></li>
+            <li><a href="rents.html">Мои аренды</a></li>
+            <li><a href="registration.html">Предложить свою кассету</a></li>
+        </ul>
+    </div>
+    <div class="description">
+        <h2>Регистрация кассеты</h2>
+        <p>
+            <i>Введите необходимые данные той кассеты, которую вы хотите предложить нашему прокатному пункту. Рассмотрение вашей заявки происходит в течение трех рабочих дней.</i>
+        </p>
+    </div> 
+    <div class="description">
+        <div class="form-container">
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="cassetteName">Название кассеты:</label>
+                    <input type="text" id="cassetteName" name="cassetteName" required placeholder="Шрек 3">
+                </div>
+                <div class="form-group">
+                    <label for="cassetteDescription">Описание кассеты:</label>
+                    <input type="text" id="cassetteDescription" name="cassetteDescription" required placeholder="Некоторое описание для Вашей кассеты">
+                </div>
+                <div class="form-group">
+                    <label for="deposit">Залог:</label>
+                    <input type="number" id="deposit" name="deposit" required placeholder="150">
+                </div>
+                <div class="form-group">
+                    <label for="rentalDays">Срок проката (в сутках):</label>
+                    <input type="number" id="rentalDays" name="rentalDays" required placeholder="20">
+                </div>
+                <div class="form-group">
+                    <label for="rentalCost">Срок проката (за сутки):</label>
+                    <input type="number" id="rentalCost" name="rentalCost" required placeholder="20">
+                </div>
+                <div class="form-group center">
+                    <button type="button" onclick="saveFormData()">Зарегистрировать</button>
+                </div>
+            </form>
+        </div>              
+    </div>
+    <div class="description">
+        Copyright © 2024 Пункт проката. Все права защищены.
+    </div>
+
+    <script>
+        function saveFormData() {
+            var form = document.getElementById("registrationForm");
+            var formData = {};
+            for (var i = 0; i < form.elements.length; i++) {
+                var element = form.elements[i];
+                if (element.type !== "button") {
+                    formData[element.name] = element.value;
+                }
+            }
+            localStorage.setItem('formData', JSON.stringify(formData));
+        }
+    </script>
+</body>
+</html>

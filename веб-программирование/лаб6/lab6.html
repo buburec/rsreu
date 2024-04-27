@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    input {
+        margin-top: 10px;
+    }
+
+    form, div {
+        margin-top: 20px;
+    }
+        
+    table {
+        border-spacing: 0px;
+    }
+</style>
+<script src="lab6.js"></script>
+</head>
+<body>
+    <form id="setup">
+        <label for="arraySize">Размер массива:</label><br>
+        <input type="text" id="arraySize"><br>
+        <input type="button" id="button" value="Создать массив" onclick="generateInventoryList(form.arraySize.value)"><br>
+        <input type="text" id="deserializedList"><br>
+        <input type="button" id="button" value="Десериализация списка" onclick="deserializeList(form.deserializedList.value)"><br>
+    </form>
+    <form id="settings" hidden="true">
+        <input type="button" id="button" value="Отобразить массив" onclick="print()"><br>
+        <input type="button" id="button" value="Удалить объекты с текущим годом" onclick="removeCurrentYearAcquisition()">
+        <input type="button" id="button" value="Добавить срок службы" onclick="addServiceLifeInfo()"><br>
+        <input type="radio" id="buildingFlag" checked="true" name="filter" value="building">
+        <label for="buildingFlag">Здание</label><br>
+        <input type="radio" id="floorFlag" name="filter" value="floor">
+        <label for="floorFlag">Этаж</label><br>
+        <input type="radio" id="serviceLifeFlag" name="filter" value="serviceLife">
+        <label for="serviceLifeFlag">Срок службы</label><br>
+        <label for="value">Параметр отбора:</label><br>
+        <input type="text" id="value"><br>
+        <input type="button" id="button" value="Фильтр списка" onclick="filterList(form.value.value)"><br>
+        <input type="button" id="button" value="Сериализация списка" onclick="serializeList()"><br>
+        <label id="serializedList"></label><br>
+    </form>
+    <div id="output" class="result"></div>
+</body>
+</html>

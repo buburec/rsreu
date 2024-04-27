@@ -1,0 +1,127 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(210, 208, 208);
+    margin: 0;
+    padding: 0;
+    background-image: url("images/background.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+h1 {
+    font-family: Montserrat, sans-serif; 
+    color: rgb(0, 0, 0);
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: Montserrat, sans-serif; 
+    color: #555;
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-family: Montserrat, sans-serif; 
+    cursor: pointer;
+    width: auto;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.header {
+    background-color: #370e35; 
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px; 
+}
+
+.header ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.header ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header ul li a:hover {
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100px;
+}
+
+.form-container {
+    text-align: center;
+    width: 800px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    width: 150px;
+}
+
+.form-group input {
+    flex: 1;
+}
+
+.center {
+    justify-content: center;
+}
+
+.table-container {
+    text-align: center;
+}
+
+.description {
+    font-family: 'Montserrat', sans-serif;
+    color: #333; 
+    background-color: #fff; 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 800px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}

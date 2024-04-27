@@ -1,0 +1,11 @@
+<Schedule>
+    <Name>Группа 144</Name>
+    <GroupNumber>144</GroupNumber>
+    <Term>6</Term>
+    <Day>Вторник</Day>
+    <Time>08:10 - 9:15</Time>
+    <WeekType>Знаменатель</WeekType>
+    <Lesson>Web программирование</Lesson>
+    <Lecturer>Антипов Олег Владимирович</Lecturer>
+    <Room>206-1</Room>
+</Schedule>

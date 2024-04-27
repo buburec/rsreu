@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+    input {
+        margin-top: 10px;
+    }
+
+    form, div {
+        margin-top: 20px;
+    }
+        
+    table {
+        border-spacing: 0px;
+    }
+</style>
+<script src="lab5.js"></script>
+</head>
+<body>
+    <form>
+        <label for="matrixSize">Размер матрицы:</label><br>
+        <input type="text" id="matrixSize"><br>
+        <label for="minValue">Минимальное значение:</label><br>
+        <input type="text" id="minValue"><br>
+        <label for="maxValue">Максимальное значение:</label><br>
+        <input type="text" id="maxValue"><br>
+        <input type="button" id="button" value="Результат" onclick="calculate()">
+    </form>
+    <div id="output" class="result"></div>
+</body>
+</html>
