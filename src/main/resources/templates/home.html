@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин сантехники</title>
+    <link rel="stylesheet" href="/css/style.css"> <!-- Стиль страницы -->
+</head>
+<body>
+<header>
+    <h1 th:text="${name}"></h1>
+    <nav>
+        <ul>
+            <li><a href="/" th:href="@{/}">Главная</a></li>
+            <li><a href="/products" th:href="@{/products}">Каталог товаров</a></li>
+            <li><a href="/about" th:href="@{/about}">О нас</a></li>
+            <li><a href="/contact" th:href="@{/contact}">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Лучшие товары для вашего дома</h2>
+    <p>У нас вы найдете высококачественные раковины, смесители, ванны и другие товары для ванной комнаты и кухни.</p>
+
+    <section id="featured-products">
+        <h3>Популярные товары</h3>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Магазин сантехники. Все права защищены.</p>
+</footer>
+</body>
+</html>
