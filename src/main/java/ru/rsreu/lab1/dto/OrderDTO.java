@@ -2,13 +2,15 @@ package ru.rsreu.lab1.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter @Setter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class OrderDTO {
     @NotEmpty(message = "Имя клиента не должно быть пустым")
     @Size(min = 2, max = 50, message = "Имя клиента должно быть от 2 до 50 символов")
@@ -22,7 +24,7 @@ public class OrderDTO {
     private String customerEmail;
 
     @NotNull(message = "Список товаров не может быть пустым")
-    private List<ItemDTO> items;
+    private ItemDTO item;
 
     @NotNull(message = "Общая сумма заказа не может быть пустой")
     private Double totalPrice;
