@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Оформление заказа</title>
+</head>
+<body>
+<h2>Форма заказа</h2>
+<form th:action="@{/submitOrder}" th:object="${orderDTO}" method="post">
+    <label for="customerName">Имя клиента:</label>
+    <input type="text" id="customerName" th:field="*{customerName}" />
+    <div th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></div>
+
+    <label for="customerPhone">Телефон клиента:</label>
+    <input type="text" id="customerPhone" th:field="*{customerPhone}" />
+    <div th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}"></div>
+
+    <label for="customerEmail">Электронная почта:</label>
+    <input type="text" id="customerEmail" th:field="*{customerEmail}" />
+    <div th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></div>
+
+    <label for="items">Товары:</label>
+    <div th:each="item, iterStat : *{items}">
+        <label for="productName">Название товара:</label>
+        <input type="text" th:field="*{items[__${iterStat.index}__].productName}" />
+
+        <label for="quantity">Количество:</label>
+        <input type="number" th:field="*{items[__${iterStat.index}__].quantity}" />
+
+        <label for="price">Цена:</label>
+        <input type="number" th:field="*{items[__${iterStat.index}__].price}" />
+    </div>
+
+    <button type="submit">Отправить заказ</button>
+</form>
+</body>
+</html>

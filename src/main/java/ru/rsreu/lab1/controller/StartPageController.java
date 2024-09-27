@@ -11,9 +11,4 @@ public class StartPageController {
         model.addAttribute("name", "магазин сантехники");
         return "home";
     }
-
-    @GetMapping("/")
-    public String redirect() {
-        return "home";
-    }
 }
