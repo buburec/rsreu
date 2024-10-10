@@ -11,13 +11,13 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/products")
-public class ProductsController {
-    @GetMapping("/")
+public class ProductController {
+    @GetMapping("")
     public String getProducts(Model model) {
         List<ItemDTO> itemDTOList = new ArrayList<>() {{
-            add(new ItemDTO("Item1", 100.0, 100));
-            add(new ItemDTO("Item2", 200.0, 200));
-            add(new ItemDTO("Item3", 300.0, 300));
+            add(new ItemDTO(0L, "Item1", 100.0, 100));
+            add(new ItemDTO(1L, "Item2", 200.0, 200));
+            add(new ItemDTO(2L, "Item3", 300.0, 300));
         }};
         model.addAttribute("itemDTOList", itemDTOList);
         return "product";

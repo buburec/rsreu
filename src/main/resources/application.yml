@@ -1,3 +1,18 @@
 spring:
   application:
     name: lab1
+  datasource:
+    url: jdbc:h2:mem:testdb # URL для H2 Database (в режиме in-memory или файла)
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true # Включение консоли H2 для просмотра данных
+      path: /h2-console # Путь к консоли H2
+  jpa:
+    hibernate:
+      ddl-auto: update # Автоматическое создание таблиц
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.xml

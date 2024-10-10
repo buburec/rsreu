@@ -2,7 +2,7 @@ package ru.rsreu.sanitary_ware.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-import ru.rsreu.sanitary_ware.data.Order;
+import ru.rsreu.sanitary_ware.entity.Order;
 import ru.rsreu.sanitary_ware.dto.OrderDTO;
 
 @Mapper(componentModel = "spring")

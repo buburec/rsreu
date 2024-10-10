@@ -15,7 +15,7 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/order")
 public class OrderController {
-    @GetMapping("/submitOrder")
+    @GetMapping("/submit_order")
     public String showOrderForm(Model model) {
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setItem(new ItemDTO());
@@ -23,12 +23,11 @@ public class OrderController {
         return "order_form";
     }
 
-    @PostMapping("/submitOrder")
+    @PostMapping("/submit_order")
     public String submitOrder(@Valid @ModelAttribute("orderDTO") OrderDTO orderDTO, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "order_form";
         }
-
         model.addAttribute("message", "отумлцоту");
         return "order_success";
     }

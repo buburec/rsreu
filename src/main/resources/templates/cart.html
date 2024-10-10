@@ -5,11 +5,21 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<header>
-    <h1>Ваша корзина</h1>
-</header>
+    <header>
+        <h1>Sanitary Ware</h1>
+        <nav>
+            <ul>
+                <li><a href="/" th:href="@{/}">Главная</a></li>
+                <li><a href="/products" th:href="@{/products}">Каталог товаров</a></li>
+                <li><a href="/order/order_form" th:href="@{/order/submit_order}">Сделать заказ</a></li>
+                <li><a href="/contact" th:href="@{/cart}">Корзина</a></li>
+                <li><a href="/about" th:href="@{/login}">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
 
 <section class="cart">
+    <h2>Ваша корзина товаров</h2>
     <div th:if="${cartItems.isEmpty()}">
         <p>Корзина пуста.</p>
     </div>

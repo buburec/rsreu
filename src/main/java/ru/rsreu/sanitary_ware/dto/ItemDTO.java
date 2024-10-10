@@ -13,6 +13,8 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ItemDTO {
+    private Long id;
+
     @NotEmpty(message = "Название товара не должно быть пустым")
     private String productName;
 
