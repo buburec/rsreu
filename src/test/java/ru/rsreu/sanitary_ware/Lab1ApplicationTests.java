@@ -1,4 +1,4 @@
-package ru.rsreu.lab1;
+package ru.rsreu.sanitary_ware;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,11 +1,9 @@
-package ru.rsreu.lab1.mapper;
+package ru.rsreu.sanitary_ware.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-import ru.rsreu.lab1.data.Item;
-import ru.rsreu.lab1.data.Order;
-import ru.rsreu.lab1.dto.ItemDTO;
-import ru.rsreu.lab1.dto.OrderDTO;
+import ru.rsreu.sanitary_ware.data.Item;
+import ru.rsreu.sanitary_ware.dto.ItemDTO;
 
 @Mapper(componentModel = "spring")
 public interface ItemMapper {

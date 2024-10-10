@@ -1,4 +1,4 @@
-package ru.rsreu.lab1.data;
+package ru.rsreu.sanitary_ware.data;
 
 import lombok.Data;
 import lombok.Getter;

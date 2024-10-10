@@ -1,13 +1,10 @@
-package ru.rsreu.lab1.dto;
+package ru.rsreu.sanitary_ware.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter @Setter
 @RequiredArgsConstructor

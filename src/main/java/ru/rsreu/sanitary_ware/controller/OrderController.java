@@ -1,4 +1,4 @@
-package ru.rsreu.lab1.controller;
+package ru.rsreu.sanitary_ware.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.rsreu.lab1.dto.ItemDTO;
-import ru.rsreu.lab1.dto.OrderDTO;
+import ru.rsreu.sanitary_ware.dto.ItemDTO;
+import ru.rsreu.sanitary_ware.dto.OrderDTO;
 
 import javax.validation.Valid;
 
