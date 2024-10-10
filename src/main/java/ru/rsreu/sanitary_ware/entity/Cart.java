@@ -1,22 +1,29 @@
 package ru.rsreu.sanitary_ware.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.NotNull;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
+@Getter
+@Setter
 @Entity
-@Data
+@Table(name = "cart")
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cartId;
+    @Column(name = "cart_id", nullable = false)
+    private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "customer_id")
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
     @OneToMany(mappedBy = "cart")
-    private List<CartItem> cartItems;
+    private Set<CartItem> cartItems = new LinkedHashSet<>();
 
 }

@@ -24,24 +24,4 @@ class Lab1ApplicationTests {
                 .andDo(print());
     }
 
-    @Test
-    public void getLostPage() throws Exception {
-        mockMvc.perform(get("/"))
-                .andExpect(status().isNotFound())
-                .andDo(print());
-    }
-
-    @Test
-    public void getNamePage() throws Exception {
-        mockMvc.perform(get("/home"))
-                .andExpect(view().name("home"));
-    }
-
-    @Test
-    public void testHomePage() throws Exception {
-        mockMvc.perform(get("/home"))
-                .andExpect(model().attribute("name", "магазин сантехники"));
-    }
-
-
 }

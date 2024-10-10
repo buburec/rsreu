@@ -1,21 +1,37 @@
 package ru.rsreu.sanitary_ware.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+@Getter
+@Setter
 @Entity
-@Data
+@Table(name = "supplier")
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long supplierId;
+    @Column(name = "supplier_id", nullable = false)
+    private Long id;
 
+    @Size(max = 255)
+    @NotNull
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Size(max = 255)
+    @Column(name = "contact_person")
     private String contactPerson;
+
+    @Size(max = 20)
+    @Column(name = "contact_phone", length = 20)
     private String contactPhone;
+
+    @Size(max = 255)
+    @Column(name = "email")
     private String email;
+
 }

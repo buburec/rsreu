@@ -1,20 +1,34 @@
 package ru.rsreu.sanitary_ware.entity;
 
-import javax.persistence.*;
-import lombok.Data;
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+@Getter
+@Setter
 @Entity
-@Data
+@Table(name = "category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long categoryId;
+    @Column(name = "category_id", nullable = false)
+    private Long id;
 
+    @Size(max = 255)
+    @NotNull
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Size(max = 255)
+    @Column(name = "description")
     private String description;
 
     @OneToMany(mappedBy = "category")
-    private List<Product> products;
-}
+    private Set<Product> products = new LinkedHashSet<>();
 
+}

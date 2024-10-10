@@ -1,26 +1,43 @@
 package ru.rsreu.sanitary_ware.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import javax.validation.constraints.NotNull;
+import java.time.Instant;
 
+@Getter
+@Setter
 @Entity
-@Data
+@Table(name = "review")
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long reviewId;
+    @Column(name = "review_id", nullable = false)
+    private Long id;
 
-    private int rating;
+    @NotNull
+    @Column(name = "rating", nullable = false)
+    private Integer rating;
+
+    @Column(name = "comment")
+    @Type(type = "org.hibernate.type.TextType")
     private String comment;
-    private LocalDateTime reviewDate;
 
-    @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @NotNull
+    @Column(name = "review_date", nullable = false)
+    private Instant reviewDate;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+
 }

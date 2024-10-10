@@ -1,10 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="0" author="admin">
-
+    <changeSet id="v1-create-category" author="kpopov143">
+        <createTable tableName="category">
+            <column name="category_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+        </createTable>
     </changeSet>
+
+    <changeSet id="v1-create-product" author="kpopov143">
+        <createTable tableName="product">
+            <column name="product_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="price" type="DECIMAL(15,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="stock_quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image_url" type="VARCHAR(255)"/>
+            <column name="category_id" type="BIGINT">
+                <constraints foreignKeyName="fk_product_category" nullable="false"
+                             references="category(category_id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-create-customer" author="kpopov143">
+        <createTable tableName="customer">
+            <column name="customer_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="VARCHAR(20)"/>
+            <column name="address" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-create-order" author="kpopov143">
+        <createTable tableName="customer_order">
+            <column name="order_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="order_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="total_amount" type="DECIMAL(15,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="customer_id" type="BIGINT">
+                <constraints foreignKeyName="fk_order_customer" nullable="false"
+                             references="customer(customer_id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-create-order_item" author="kpopov143">
+        <createTable tableName="order_item">
+            <column name="order_item_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="DECIMAL(15,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_id" type="BIGINT">
+                <constraints foreignKeyName="fk_order_item_order" nullable="false"
+                             references="customer_order(order_id)"/>
+            </column>
+            <column name="product_id" type="BIGINT">
+                <constraints foreignKeyName="fk_order_item_product" nullable="false"
+                             references="product(product_id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-create-cart" author="kpopov143">
+        <createTable tableName="cart">
+            <column name="cart_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT">
+                <constraints foreignKeyName="fk_cart_customer" nullable="false"
+                             references="customer(customer_id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-create-cart_item" author="kpopov143">
+        <createTable tableName="cart_item">
+            <column name="cart_item_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cart_id" type="BIGINT">
+                <constraints foreignKeyName="fk_cart_item_cart" nullable="false"
+                             references="cart(cart_id)"/>
+            </column>
+            <column name="product_id" type="BIGINT">
+                <constraints foreignKeyName="fk_cart_item_product" nullable="false"
+                             references="product(product_id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-create-supplier" author="kpopov143">
+        <createTable tableName="supplier">
+            <column name="supplier_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contact_person" type="VARCHAR(255)"/>
+            <column name="contact_phone" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="v1-create-review" author="kpopov143">
+        <createTable tableName="review">
+            <column name="review_id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="rating" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="comment" type="TEXT"/>
+            <column name="review_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT">
+                <constraints foreignKeyName="fk_review_customer" nullable="false"
+                             references="customer(customer_id)"/>
+            </column>
+            <column name="product_id" type="BIGINT">
+                <constraints foreignKeyName="fk_review_product" nullable="false"
+                             references="product(product_id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
