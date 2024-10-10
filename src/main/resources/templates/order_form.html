@@ -2,50 +2,63 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Оформление заказа</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <meta charset="UTF-8">
 </head>
 <body>
-<h1>Оформление заказа</h1>
+    <header>
+        <h1>Sanitary Ware</h1>
+        <nav>
+            <ul>
+                <li><a href="/" th:href="@{/}">Главная</a></li>
+                <li><a href="/products" th:href="@{/products/}">Каталог товаров</a></li>
+                <li><a href="/order/order_form" th:href="@{/order/submitOrder}">Сделать заказ</a></li>
+                <li><a href="/about" th:href="@{/about}">О нас</a></li>
+                <li><a href="/contact" th:href="@{/contact}">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Оформление заказа</h1>
 
-<form action="#" th:action="@{/order/submitOrder}" th:object="${orderDTO}" method="post">
-    <label for="customerName">Имя клиента:</label>
-    <input type="text" id="customerName" th:field="*{customerName}" placeholder="Введите имя клиента" />
-    <div th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}">Ошибка в имени клиента</div>
-    <br>
+    <form action="#" th:action="@{/order/submitOrder}" th:object="${orderDTO}" method="post">
+        <label for="customerName">Имя клиента:</label>
+        <input type="text" id="customerName" th:field="*{customerName}" placeholder="Введите имя клиента" />
+        <div th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}">Ошибка в имени клиента</div>
+        <br>
 
-    <label for="customerPhone">Номер телефона:</label>
-    <input type="text" id="customerPhone" th:field="*{customerPhone}" placeholder="Введите номер телефона" />
-    <div th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}">Ошибка в номере телефона</div>
-    <br>
+        <label for="customerPhone">Номер телефона:</label>
+        <input type="text" id="customerPhone" th:field="*{customerPhone}" placeholder="Введите номер телефона" />
+        <div th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}">Ошибка в номере телефона</div>
+        <br>
 
-    <label for="customerEmail">Электронная почта:</label>
-    <input type="email" id="customerEmail" th:field="*{customerEmail}" placeholder="Введите email" />
-    <div th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}">Ошибка в email</div>
-    <br>
+        <label for="customerEmail">Электронная почта:</label>
+        <input type="email" id="customerEmail" th:field="*{customerEmail}" placeholder="Введите email" />
+        <div th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}">Ошибка в email</div>
+        <br>
 
-    <h2>Товар</h2>
-    <label for="productName">Название товара:</label>
-    <input type="text" id="productName" th:field="*{item.productName}" placeholder="Название товара" />
-    <div th:if="${#fields.hasErrors('item.productName')}" th:errors="*{item.productName}">Ошибка в названии товара</div>
-    <br>
+        <h2>Товар</h2>
+        <label for="productName">Название товара:</label>
+        <input type="text" id="productName" th:field="*{item.productName}" placeholder="Название товара" />
+        <div th:if="${#fields.hasErrors('item.productName')}" th:errors="*{item.productName}">Ошибка в названии товара</div>
+        <br>
 
-    <label for="quantity">Количество:</label>
-    <input type="number" id="quantity" th:field="*{item.quantity}" placeholder="Количество" />
-    <div th:if="${#fields.hasErrors('item.quantity')}" th:errors="*{item.quantity}">Ошибка в количестве товара</div>
-    <br>
+        <label for="quantity">Количество:</label>
+        <input type="number" id="quantity" th:field="*{item.quantity}" placeholder="Количество" />
+        <div th:if="${#fields.hasErrors('item.quantity')}" th:errors="*{item.quantity}">Ошибка в количестве товара</div>
+        <br>
 
-    <label for="price">Цена:</label>
-    <input type="number" id="price" th:field="*{item.price}" placeholder="Цена" step="0.01" />
-    <div th:if="${#fields.hasErrors('item.price')}" th:errors="*{item.price}">Ошибка в цене товара</div>
-    <br>
+        <label for="price">Цена:</label>
+        <input type="number" id="price" th:field="*{item.price}" placeholder="Цена" step="0.01" />
+        <div th:if="${#fields.hasErrors('item.price')}" th:errors="*{item.price}">Ошибка в цене товара</div>
+        <br>
 
-    <!-- Общая сумма заказа -->
-    <label for="totalPrice">Общая сумма заказа:</label>
-    <input type="number" id="totalPrice" th:field="*{totalPrice}" placeholder="Введите общую сумму" step="0.01" />
-    <div th:if="${#fields.hasErrors('totalPrice')}" th:errors="*{totalPrice}">Ошибка в общей сумме</div>
-    <br>
+        <!-- Общая сумма заказа -->
+        <label for="totalPrice">Общая сумма заказа:</label>
+        <input type="number" id="totalPrice" th:field="*{totalPrice}" placeholder="Введите общую сумму" step="0.01" />
+        <div th:if="${#fields.hasErrors('totalPrice')}" th:errors="*{totalPrice}">Ошибка в общей сумме</div>
+        <br>
 
-    <button type="submit">Оформить заказ</button>
-</form>
+        <button type="submit">Оформить заказ</button>
+    </form>
 </body>
 </html>

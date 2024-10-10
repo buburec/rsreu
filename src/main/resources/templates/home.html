@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Магазин сантехники</title>
-    <link rel="stylesheet" href="/css/style.css"> <!-- Стиль страницы -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <header>
@@ -11,7 +11,7 @@
     <nav>
         <ul>
             <li><a href="/" th:href="@{/}">Главная</a></li>
-            <li><a href="/products" th:href="@{/products}">Каталог товаров</a></li>
+            <li><a href="/products" th:href="@{/products/}">Каталог товаров</a></li>
             <li><a href="/order/order_form" th:href="@{/order/submitOrder}">Сделать заказ</a></li>
             <li><a href="/about" th:href="@{/about}">О нас</a></li>
             <li><a href="/contact" th:href="@{/contact}">Контакты</a></li>

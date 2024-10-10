@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Детали товара</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Sanitary Ware</h1>
+        <nav>
+            <ul>
+                <li><a href="/" th:href="@{/}">Главная</a></li>
+                <li><a href="/products" th:href="@{/products/}">Каталог товаров</a></li>
+                <li><a href="/order/order_form" th:href="@{/order/submitOrder}">Сделать заказ</a></li>
+                <li><a href="/about" th:href="@{/about}">О нас</a></li>
+                <li><a href="/contact" th:href="@{/contact}">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="catalog">
+        <h2>Каталог товаров</h2>
+        <div class="product-list">
+            <div th:each="product : ${itemDTOList}" class="itemDTO">
+                <h3 th:text="${product.productName}">Название товара</h3>
+                <p><strong>Цена:</strong> <span th:text="${product.price}">0</span> руб.</p>
+                <p><strong>Количество:</strong> <span th:text="${product.quantity}">0</span> ед.</p>
+<!--                <a th:href="@{/product/{id}(id=${product.id})}" class="button">Подробнее</a>-->
+            </div>
+        </div>
+</section>
+</body>
+</html>

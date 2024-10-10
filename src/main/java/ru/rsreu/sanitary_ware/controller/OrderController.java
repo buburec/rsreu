@@ -19,10 +19,6 @@ public class OrderController {
     public String showOrderForm(Model model) {
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setItem(new ItemDTO());
-
-
-        // Инициализация списка товаров
-        // добавление одного элемента для теста
         model.addAttribute("orderDTO", new OrderDTO());
         return "order_form";
     }
