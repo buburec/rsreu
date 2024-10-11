@@ -1,14 +1,12 @@
 package ru.rsreu.sanitary_ware.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Value;
-import ru.rsreu.sanitary_ware.entity.CartItem;
-import ru.rsreu.sanitary_ware.entity.OrderItem;
-import ru.rsreu.sanitary_ware.entity.Review;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
-import java.util.Set;
 
 /**
  * DTO for {@link ru.rsreu.sanitary_ware.entity.Product}
@@ -27,9 +25,5 @@ public class ProductDto {
     Integer stockQuantity;
     @Size(max = 255)
     String imageUrl;
-    @NotNull
-    CategoryDto category;
-    Set<CartItemDto> cartItems;
-    Set<OrderItemDto> orderItems;
-    Set<ReviewDto> reviews;
+    Long categoryId;
 }

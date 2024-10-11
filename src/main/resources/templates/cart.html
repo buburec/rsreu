@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Корзина</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+  <title>Корзина</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <meta charset="UTF-8">
 </head>
 <body>
-    <header>
-        <h1>Sanitary Ware</h1>
-        <nav>
-            <ul>
-                <li><a href="/" th:href="@{/}">Главная</a></li>
-                <li><a href="/products" th:href="@{/products}">Каталог товаров</a></li>
-                <li><a href="/order/order_form" th:href="@{/order/submit_order}">Сделать заказ</a></li>
-                <li><a href="/contact" th:href="@{/cart}">Корзина</a></li>
-                <li><a href="/about" th:href="@{/login}">Войти</a></li>
-            </ul>
-        </nav>
-    </header>
-
-<section class="cart">
-    <h2>Ваша корзина товаров</h2>
-    <div th:if="${cartItems.isEmpty()}">
-        <p>Корзина пуста.</p>
-    </div>
-
-    <div th:if="${!cartItems.isEmpty()}">
-        <div th:each="item : ${cartItems}" class="cart-item">
-            <p><strong>Товар:</strong> <span th:text="${item.product.name}">Название товара</span></p>
-            <p><strong>Цена:</strong> <span th:text="${item.product.price}">0</span> руб.</p>
-            <p><strong>Количество:</strong> <span th:text="${item.quantity}">1</span></p>
-            <form th:action="@{/cart/remove}" method="post">
-                <input type="hidden" th:value="${item.product.id}" name="productId"/>
-                <button type="submit" class="button remove-button">Удалить</button>
-            </form>
-        </div>
-        <div class="total">
-            <p>Общая сумма: <span th:text="${totalPrice}">0</span> руб.</p>
-            <a th:href="@{/checkout}" class="button">Оформить заказ</a>
-        </div>
-    </div>
-</section>
+<header>
+  <h1>Sanitary Ware - Корзина</h1>
+  <nav>
+    <ul>
+      <li><a href="/" th:href="@{/}">Главная</a></li>
+      <li><a href="/products/list" th:href="@{/products/list}">Каталог товаров</a></li>
+      <li><a href="/cart" th:href="@{/cart}">Корзина</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <h2>Корзина</h2>
+  <div th:if="${cart.isEmpty()}">
+    <p>Ваша корзина пуста.</p>
+  </div>
+  <div th:if="${!cart.isEmpty()}">
+    <table>
+      <thead>
+      <tr>
+        <th>Название товара</th>
+        <th>Количество</th>
+        <th>Цена</th>
+        <th>Сумма</th>
+        <th>Действия</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="item : ${cart}">
+        <td th:text="${item.product.name}">Название товара</td>
+        <td th:text="${item.quantity}">1</td>
+        <td th:text="${item.product.price}">0.00</td>
+        <td th:text="${#numbers.formatDecimal(item.product.price * item.quantity, 2, 2)}">0.00</td>
+        <td><a th:href="@{/cart/remove/{id}(id=${item.id})}">Удалить</a></td>
+      </tr>
+      </tbody>
+    </table>
+    <p>Итого: <span th:text="${totalPrice}">0.00</span> руб.</p>
+    <a href="/order" th:href="@{/order}">Оформить заказ</a>
+  </div>
+</main>
 </body>
 </html>

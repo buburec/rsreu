@@ -1,11 +1,11 @@
 package ru.rsreu.sanitary_ware.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Value;
-import ru.rsreu.sanitary_ware.entity.Cart;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Set;
 
 /**
  * DTO for {@link ru.rsreu.sanitary_ware.entity.Customer}
@@ -23,7 +23,4 @@ public class CustomerDto {
     String phone;
     @Size(max = 255)
     String address;
-    Set<CartDto> carts;
-    Set<CustomerOrderDto> customerOrders;
-    Set<ReviewDto> reviews;
 }

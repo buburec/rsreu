@@ -1,5 +1,7 @@
 package ru.rsreu.sanitary_ware.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Value;
 
 import javax.validation.constraints.NotNull;
@@ -15,8 +17,6 @@ public class OrderItemDto {
     Integer quantity;
     @NotNull
     BigDecimal price;
-    @NotNull
-    CustomerOrderDto order;
-    @NotNull
-    ProductDto product;
+    Long orderId;
+    Long productId;
 }

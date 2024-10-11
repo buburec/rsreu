@@ -46,13 +46,4 @@ public class Product {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
-    @OneToMany(mappedBy = "product")
-    private Set<CartItem> cartItems = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "product")
-    private Set<OrderItem> orderItems = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "product")
-    private Set<Review> reviews = new LinkedHashSet<>();
-
 }

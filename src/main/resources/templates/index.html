@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sanitary Ware</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <meta charset="UTF-8">
+</head>
+<body>
+<header>
+    <h1>Sanitary Ware</h1>
+    <nav>
+        <ul>
+            <li><a href="/" th:href="@{/}">Главная</a></li>
+            <li><a href="/products/list" th:href="@{/products/list}">Каталог товаров</a></li>
+            <li><a href="/cart/list" th:href="@{/cart/list}">Корзина</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section>
+        <h2>Добро пожаловать!</h2>
+        <p>У нас вы найдете качественные товары для вашего дома.</p>
+        <a href="/products/list" th:href="@{/products/list}" class="btn">Перейти в каталог товаров</a>
+    </section>
+</main>
+</body>
+</html>

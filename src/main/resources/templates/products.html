@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Каталог товаров</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <meta charset="UTF-8">
+</head>
+<body>
+<header>
+    <h1>Sanitary Ware - Каталог товаров</h1>
+    <nav>
+        <ul>
+            <li><a href="/" th:href="@{/}">Главная</a></li>
+            <li><a href="/products/list" th:href="@{/products/list}">Каталог товаров</a></li>
+            <li><a href="/cart" th:href="@{/cart}">Корзина</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Наши товары</h2>
+    <section>
+        <div class="product-list">
+            <div th:each="product : ${products}">
+                <h3 th:text="${product.name}">Название товара</h3>
+                <p th:text="${product.description}">Описание товара</p>
+                <p>Цена: <span th:text="${product.price}">0.00</span> руб.</p>
+                <button th:href="@{/cart_item/add/{id}(id=${product.id})}">Добавить в корзину</button>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

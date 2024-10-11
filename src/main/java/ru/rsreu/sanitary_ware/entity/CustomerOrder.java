@@ -38,7 +38,4 @@ public class CustomerOrder {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    @OneToMany(mappedBy = "order")
-    private Set<OrderItem> orderItems = new LinkedHashSet<>();
-
 }

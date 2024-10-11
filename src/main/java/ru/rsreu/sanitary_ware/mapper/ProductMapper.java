@@ -1,29 +1,28 @@
 package ru.rsreu.sanitary_ware.mapper;
 
 import org.mapstruct.*;
+import ru.rsreu.sanitary_ware.dto.ProductDto;
+import ru.rsreu.sanitary_ware.entity.Category;
 import ru.rsreu.sanitary_ware.entity.Product;
 
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING, uses = {CategoryMapper.class})
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ProductMapper {
-    Product toEntity(ru.rsreu.sanitary_ware.dto.ProductDto productDto);
+    @Mapping(source = "categoryId", target = "category.id")
+    Product toEntity(ProductDto productDto);
 
-    @AfterMapping
-    default void linkCartItems(@MappingTarget Product product) {
-        product.getCartItems().forEach(cartItem -> cartItem.setProduct(product));
-    }
-
-    @AfterMapping
-    default void linkOrderItems(@MappingTarget Product product) {
-        product.getOrderItems().forEach(orderItem -> orderItem.setProduct(product));
-    }
-
-    @AfterMapping
-    default void linkReviews(@MappingTarget Product product) {
-        product.getReviews().forEach(review -> review.setProduct(product));
-    }
-
-    ru.rsreu.sanitary_ware.dto.ProductDto toDto(Product product);
+    @Mapping(source = "category.id", target = "categoryId")
+    ProductDto toDto(Product product);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    Product partialUpdate(ru.rsreu.sanitary_ware.dto.ProductDto productDto, @MappingTarget Product product);
+    @Mapping(source = "categoryId", target = "category")
+    Product partialUpdate(ProductDto productDto, @MappingTarget Product product);
+
+    default Category createCategory(Long categoryId) {
+        if (categoryId == null) {
+            return null;
+        }
+        Category category = new Category();
+        category.setId(categoryId);
+        return category;
+    }
 }

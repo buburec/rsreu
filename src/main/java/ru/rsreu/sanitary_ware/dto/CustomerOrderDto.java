@@ -1,5 +1,7 @@
 package ru.rsreu.sanitary_ware.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Value;
 
 import javax.validation.constraints.NotNull;
@@ -19,4 +21,5 @@ public class CustomerOrderDto {
     BigDecimal totalAmount;
     @Size(max = 255)
     String status;
+    Long customerId;
 }

@@ -1,5 +1,7 @@
 package ru.rsreu.sanitary_ware.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Value;
 
 import javax.validation.constraints.NotNull;
@@ -12,8 +14,6 @@ public class CartItemDto {
     Long id;
     @NotNull
     Integer quantity;
-    @NotNull
-    CartDto cart;
-    @NotNull
-    ProductDto product;
+    Long cartId;
+    Long productId;
 }

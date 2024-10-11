@@ -1,10 +1,8 @@
 package ru.rsreu.sanitary_ware.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.Value;
-import ru.rsreu.sanitary_ware.entity.CartItem;
-
-import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 /**
  * DTO for {@link ru.rsreu.sanitary_ware.entity.Cart}
@@ -12,7 +10,5 @@ import java.util.Set;
 @Value
 public class CartDto {
     Long id;
-    @NotNull
-    CustomerDto customer;
-    Set<CartItemDto> cartItems;
+    Long customerId;
 }

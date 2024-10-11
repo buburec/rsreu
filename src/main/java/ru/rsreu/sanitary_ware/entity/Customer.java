@@ -37,13 +37,4 @@ public class Customer {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(mappedBy = "customer")
-    private Set<Cart> carts = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "customer")
-    private Set<CustomerOrder> customerOrders = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "customer")
-    private Set<Review> reviews = new LinkedHashSet<>();
-
 }
