@@ -24,6 +24,10 @@
                 <h3 th:text="${product.name}">Название товара</h3>
                 <p th:text="${product.description}">Описание товара</p>
                 <p>Цена: <span th:text="${product.price}">0.00</span> руб.</p>
+                <form th:action="@{/products/delete/{id}(id=${product.id})}" method="post">
+                    <input type="hidden" name="_method" value="delete" />
+                    <button type="submit">Удалить</button>
+                </form>
                 <button th:href="@{/cart_item/add/{id}(id=${product.id})}">Добавить в корзину</button>
             </div>
         </div>

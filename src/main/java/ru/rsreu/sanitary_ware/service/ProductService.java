@@ -19,4 +19,13 @@ public class ProductService {
         List<Product> products = productRepository.findAll();
         return products.stream().map(productMapper::toDto).toList();
     }
+
+    public void deleteProduct(Long id) {
+        productRepository.findById(id).ifPresent(product -> productRepository.deleteById(id));
+    }
+
+    public void addProduct(ProductDto productDto) {
+        Product product = productMapper.toEntity(productDto);
+        productRepository.save(product);
+    }
 }

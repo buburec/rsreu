@@ -3,8 +3,7 @@ package ru.rsreu.sanitary_ware.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.rsreu.sanitary_ware.dto.ProductDto;
 import ru.rsreu.sanitary_ware.service.ProductService;
 
@@ -23,5 +22,18 @@ public class ProductController {
         model.addAttribute("products", products);
         return "products";
     }
+
+    @PostMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
+        return "redirect:/products/list";
+    }
+
+    @PostMapping("/add")
+    public String addProduct(@ModelAttribute ProductDto productDto) {
+        productService.addProduct(productDto);
+        return "redirect:/products/list";
+    }
+
 }
 
