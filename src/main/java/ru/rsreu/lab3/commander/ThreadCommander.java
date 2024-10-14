@@ -6,7 +6,7 @@ import ru.rsreu.lab3.service.ThreadService;
  * Enum representing commands for managing threads.
  * Each command can be executed with a parameter and a ThreadService instance.
  */
-public enum ThreadCommander implements ICommander {
+public enum ThreadCommander {
 
     /**
      * Command to start a new thread for integral calculation.
@@ -75,6 +75,5 @@ public enum ThreadCommander implements ICommander {
      * @param threadService The ThreadService instance to use.
      * @return True if the command executed successfully, false if the application should exit.
      */
-    @Override
     public abstract boolean execute(String parameter, ThreadService threadService);
 }

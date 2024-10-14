@@ -24,18 +24,21 @@ public class IntegralCalculator {
     }
 
     public void calculate(int start, int offset) {
+        double result = 0.0;
         long n = this.function.getN();
+        int counter = 0;
         for (int i = start; i < n; i += offset) {
             if (Thread.interrupted()) {
                 return;
             }
             double x = this.function.calculateX(i);
-            synchronized (this.lazyResult) {
-                this.lazyResult.updateResult(this.function.apply(x));
-                if (i % (n / 20) == 0)
-                    this.lazyResult.updateProgress(Integer.parseInt(Thread.currentThread().getName()), (double) i / n);
+            result += this.function.apply(x);
+            if (counter % (n / 20) == 0) {
+                this.lazyResult.updateProgress(start, (double) i / n);
             }
+            counter++;
         }
+        this.lazyResult.updateResult(result);
     }
 
 }

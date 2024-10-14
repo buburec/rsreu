@@ -18,18 +18,5 @@ public class Runner {
         ThreadService threadService = ThreadService.getInstance();
         String[] parameters = scanner.nextLine().split(" ");
         threadService.startThread(Double.parseDouble(parameters[1]), Integer.parseInt(parameters[2]));
-//        boolean isRunning = true;
-//        while (isRunning) {
-//            String selector  = scanner.nextLine();
-//            FactoryCommander factory = FactoryCommander.valueOf(selector.toUpperCase());
-//            String[] parameters = scanner.nextLine().split(" ");
-//            String command = parameters[0];
-//            try {
-//                ICommander commander = factory.getCommander(command.toUpperCase());
-//                isRunning = commander.execute(parameters.length < 2 ? null : parameters[1], threadService);
-//            } catch (IllegalArgumentException e) {
-//                System.out.println("Введена неопределенная команда");
-//            }
-//        }
     }
 }

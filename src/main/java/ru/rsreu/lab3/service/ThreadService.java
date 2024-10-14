@@ -41,15 +41,12 @@ public class ThreadService {
      * The calculation is performed over the function f(x) = sin(x) * x on the interval [0, 1].
      *
      * @param epsilon The precision value for the integral calculation.
-     * @return The ID of the started thread.
      */
     public void startThread(double epsilon, int size) {
         double a = 0;
         double b = 1;
         FunctionWrapper function = new FunctionWrapper(x -> Math.sin(x) * x, a, b, epsilon);
-        LazyResult lazyResult = LazyResult.getInstance();
-        lazyResult.setResult(function.calculateInitialResult());
-        lazyResult.setThreadPool(size);
+        LazyResult lazyResult = LazyResult.getInstance(function.calculateInitialResult(), size);
         List<Thread> threads = new ArrayList<>();
         for (int i = 0; i < size; i++) {
             int start = i;
@@ -57,8 +54,6 @@ public class ThreadService {
                 IntegralCalculator calculator = new IntegralCalculator(function, lazyResult);
                 calculator.calculate(start, size);
             });
-            thread.setDaemon(true);
-            thread.setName(Long.toString(i));
             threads.add(thread);
         }
         for (Thread thread : threads) {
@@ -72,7 +67,7 @@ public class ThreadService {
             }
         }
         lazyResult.setResult(function.calculateFinalResult(lazyResult.getResult()));
-        System.out.printf("Final Result: %.5f%n", lazyResult.getResult());
+        System.out.println(new ResultWrapper(lazyResult.getResult()));
     }
 
     /**

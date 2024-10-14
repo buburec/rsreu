@@ -6,23 +6,24 @@ import java.util.List;
 
 public class LazyResult {
     private double result;
-    private double[] parts;
-    private volatile boolean isPrinting = false; // Флаг для предотвращения повторного вывода
+    private final double[] parts;
+    private static volatile LazyResult INSTANCE;
 
-    private LazyResult() {
-        this.result = 0.0;
-    }
-
-    public void setThreadPool(int size) {
+    private LazyResult(double result, int size) {
+        this.result = result;
         this.parts = new double[size];
     }
 
-    private static class LazyHolder {
-        static final LazyResult INSTANCE = new LazyResult();
-    }
-
-    public static LazyResult getInstance() {
-        return LazyHolder.INSTANCE;
+    public static LazyResult getInstance(double result, int size) {
+        if (INSTANCE == null) {
+            synchronized (LazyResult.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new LazyResult(result, size);
+                    System.out.println("Создано хранилище с ленивой инициализацией.");
+                }
+            }
+        }
+        return INSTANCE;
     }
 
     public double getResult() {
@@ -30,50 +31,21 @@ public class LazyResult {
     }
 
     public void setResult(double result) {
-        synchronized (this) {
-            this.result = result;
-        }
+        this.result = result;
     }
 
-    public void updateResult(double updated) {
-        synchronized (this) {
-            this.result += updated;
-        }
+    public synchronized void updateResult(double updated) {
+        this.result += updated;
     }
 
-    public void updateProgress(int threadId, double part) {
-        synchronized (this) {
-            this.parts[threadId] = part;
-        }
-        tryPrintProgress();
-    }
-
-    private void tryPrintProgress() {
-        synchronized (this) {
-            if (isPrinting) {
-                return; // Если другой поток уже выводит, выходим
-            }
-            isPrinting = true; // Устанавливаем флаг, что начался вывод
-        }
-
+    public synchronized void updateProgress(int threadId, double part) {
+        this.parts[threadId] = part;
         print();
-
-        synchronized (this) {
-            isPrinting = false; // Сбрасываем флаг после завершения вывода
-        }
     }
 
     private void print() {
-        double totalProgress = 0;
-
-        synchronized (this) {
-            for (double progress : parts) {
-                totalProgress += progress;
-            }
-        }
-
-        double overallProgress = (totalProgress / parts.length) * 100; // Средний процент выполнения всех потоков
-        System.out.printf("Overall Progress: %.2f%%%n", overallProgress);
+        double overallProgress = Arrays.stream(this.parts).average().getAsDouble() * 100;
+        System.out.printf("Общий прогресс: %.2f%%%n", overallProgress);
     }
 }
 
