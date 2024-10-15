@@ -18,5 +18,6 @@ public class Runner {
         String[] parameters = scanner.nextLine().split(" ");
         ThreadService threadService = ThreadService.getInstance(Integer.parseInt(parameters[2]));
         threadService.startThreadPool(Double.parseDouble(parameters[1]));
+        threadService.stopThreadPool();
     }
 }

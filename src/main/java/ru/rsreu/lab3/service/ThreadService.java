@@ -61,4 +61,8 @@ public class ThreadService {
             throw new RuntimeException(e);
         }
     }
+
+    public void stopThreadPool() {
+        executor.shutdown();
+    }
 }

@@ -43,13 +43,13 @@ public class IntegralCalculator {
         return result;
     }
 
-    public synchronized void updateProgress(int threadId, double part) {
+    private synchronized void updateProgress(int threadId, double part) {
         this.threadProgress[threadId] = part;
         print();
     }
 
     private void print() {
-        double overallProgress = Arrays.stream(this.threadProgress).average().getAsDouble() * 100;
+        double overallProgress = Arrays.stream(this.threadProgress).average().orElseThrow() * 100;
         System.out.printf("Общий прогресс: %.2f%%%n", overallProgress);
     }
 }
