@@ -15,8 +15,8 @@ import java.util.Scanner;
 public class Runner {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ThreadService threadService = ThreadService.getInstance();
         String[] parameters = scanner.nextLine().split(" ");
-        threadService.startThread(Double.parseDouble(parameters[1]), Integer.parseInt(parameters[2]));
+        ThreadService threadService = ThreadService.getInstance(Integer.parseInt(parameters[2]));
+        threadService.startThreadPool(Double.parseDouble(parameters[1]));
     }
 }

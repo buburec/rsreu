@@ -1,12 +1,9 @@
 package ru.rsreu.lab3.service;
 
-import ru.rsreu.lab3.entity.LazyResult;
 import ru.rsreu.lab3.entity.ResultWrapper;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.*;
 
 /**
@@ -43,18 +40,25 @@ public class ThreadService {
      *
      * @param epsilon The precision value for the integral calculation.
      */
-    public void startThread(double epsilon) {
+    public void startThreadPool(double epsilon) {
         double a = 0;
         double b = 1;
         FunctionWrapper function = new FunctionWrapper(x -> Math.sin(x) * x, a, b, epsilon);
+        IntegralCalculator calculator = new IntegralCalculator(function, threadPoolSize);
         List<Callable<Double>> tasks = new ArrayList<>();
         for (int i = 0; i < threadPoolSize; i++) {
             int start = i;
-            tasks.add(()  -> {
-                IntegralCalculator calculator = new IntegralCalculator(function, lazyResult);
-                calculator.calculate(start, threadPoolSize);
-            });
+            tasks.add(() -> calculator.calculate(start, threadPoolSize));
         }
-        List<Future<Double>> futures = this.executor.invokeAll(tasks);
+        try {
+            Double result = function.calculateInitialResult();
+            List<Future<Double>> futures = this.executor.invokeAll(tasks);
+            for (Future<Double> future : futures) {
+                result += future.get();
+            }
+            System.out.println(new ResultWrapper(function.calculateFinalResult(result)));
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

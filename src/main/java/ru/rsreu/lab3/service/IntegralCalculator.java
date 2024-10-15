@@ -3,6 +3,8 @@ package ru.rsreu.lab3.service;
 import ru.rsreu.lab3.entity.LazyResult;
 import ru.rsreu.lab3.entity.ResultWrapper;
 
+import java.util.Arrays;
+
 /**
  * The IntegralCalculator class is responsible for calculating definite integrals
  * using the trapezoidal rule. The accuracy of the calculation is controlled by the epsilon value,
@@ -15,30 +17,39 @@ import ru.rsreu.lab3.entity.ResultWrapper;
  * @author Kirill Popov
  */
 public class IntegralCalculator {
-    private final LazyResult lazyResult;
     private final FunctionWrapper function;
+    private final double[] threadProgress;
 
-    public IntegralCalculator(FunctionWrapper function, LazyResult lazyResult) {
-        this.lazyResult = lazyResult;
+    public IntegralCalculator(FunctionWrapper function, int threadPoolSize) {
         this.function = function;
+        this.threadProgress = new double[threadPoolSize];
     }
 
-    public void calculate(int start, int offset) {
+    public double calculate(int start, int offset) {
         double result = 0.0;
         long n = this.function.getN();
         int counter = 0;
         for (int i = start; i < n; i += offset) {
             if (Thread.interrupted()) {
-                return;
+                return 0d;
             }
             double x = this.function.calculateX(i);
             result += this.function.apply(x);
             if (counter % (n / 20) == 0) {
-                this.lazyResult.updateProgress(start, (double) i / n);
+                updateProgress(start, (double) i / n);
             }
             counter++;
         }
-        this.lazyResult.updateResult(result);
+        return result;
     }
 
+    public synchronized void updateProgress(int threadId, double part) {
+        this.threadProgress[threadId] = part;
+        print();
+    }
+
+    private void print() {
+        double overallProgress = Arrays.stream(this.threadProgress).average().getAsDouble() * 100;
+        System.out.printf("Общий прогресс: %.2f%%%n", overallProgress);
+    }
 }
