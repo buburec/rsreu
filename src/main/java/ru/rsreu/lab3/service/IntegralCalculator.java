@@ -1,9 +1,7 @@
 package ru.rsreu.lab3.service;
 
-import ru.rsreu.lab3.entity.LazyResult;
-import ru.rsreu.lab3.entity.ResultWrapper;
-
-import java.util.Arrays;
+import ru.rsreu.lab3.ApplicationContext;
+import ru.rsreu.lab3.entity.LazyStorage;
 
 /**
  * The IntegralCalculator class is responsible for calculating definite integrals
@@ -18,11 +16,10 @@ import java.util.Arrays;
  */
 public class IntegralCalculator {
     private final FunctionWrapper function;
-    private final double[] threadProgress;
+    private static IntegralCalculator instance;
 
-    public IntegralCalculator(FunctionWrapper function, int threadPoolSize) {
+    public IntegralCalculator(FunctionWrapper function) {
         this.function = function;
-        this.threadProgress = new double[threadPoolSize];
     }
 
     public double calculate(int start, int offset) {
@@ -36,20 +33,11 @@ public class IntegralCalculator {
             double x = this.function.calculateX(i);
             result += this.function.apply(x);
             if (counter % (n / 20) == 0) {
-                updateProgress(start, (double) i / n);
+                LazyStorage.getInstance().update(start, (double) i / n);
             }
             counter++;
         }
         return result;
     }
 
-    private synchronized void updateProgress(int threadId, double part) {
-        this.threadProgress[threadId] = part;
-        print();
-    }
-
-    private void print() {
-        double overallProgress = Arrays.stream(this.threadProgress).average().orElseThrow() * 100;
-        System.out.printf("Общий прогресс: %.2f%%%n", overallProgress);
-    }
 }
