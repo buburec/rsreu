@@ -1,6 +1,6 @@
-package ru.rsreu.lab3.entity;
+package ru.rsreu.parallel.entity;
 
-import ru.rsreu.lab3.ApplicationContext;
+import ru.rsreu.parallel.ApplicationContext;
 
 import java.util.Arrays;
 import java.util.concurrent.locks.Lock;
@@ -21,7 +21,7 @@ public class LazyStorage {
             synchronized (LazyStorage.class) {
                 if (INSTANCE == null) {
                     INSTANCE = new LazyStorage();
-                    System.out.println("Создано хранилище с ленивой инициализацией.");
+                    System.out.println("Создано хранилище с ленивой инициализацией");
                 }
             }
         }

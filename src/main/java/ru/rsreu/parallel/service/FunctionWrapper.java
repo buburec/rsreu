@@ -1,4 +1,4 @@
-package ru.rsreu.lab3.service;
+package ru.rsreu.parallel.service;
 
 import java.util.function.Function;
 
@@ -49,7 +49,7 @@ public class FunctionWrapper {
         return 0.5 * (this.apply(this.a) + this.apply(this.b));
     }
 
-    public double calculateX(int i) {
+    public double calculateX(long i) {
         return this.a + i * this.h;
     }
 

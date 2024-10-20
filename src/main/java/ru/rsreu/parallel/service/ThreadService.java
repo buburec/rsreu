@@ -1,8 +1,7 @@
-package ru.rsreu.lab3.service;
+package ru.rsreu.parallel.service;
 
-import ru.rsreu.lab3.ApplicationContext;
-import ru.rsreu.lab3.entity.LazyStorage;
-import ru.rsreu.lab3.entity.ResultWrapper;
+import ru.rsreu.parallel.ApplicationContext;
+import ru.rsreu.parallel.entity.ResultWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +81,7 @@ public class ThreadService {
                 semaphore.acquireUninterruptibly();
                 try {
                     System.out.println("Поток-" + taskId + " начал вычисления");
-                   return calculator.calculate(taskId, threadPoolSize);
+                    return calculator.calculate(taskId, threadPoolSize);
                 } finally {
                     long releaseTime = System.nanoTime();
                     countDownLatch.countDown();
@@ -92,7 +91,7 @@ public class ThreadService {
                     countDownLatch.await();
 
                     long completionDelay = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - releaseTime);
-                    System.out.println("Задержка выполнения работы потока-" + taskId + ": " + completionDelay + " мс");
+                    System.out.println("Время работы после завершения потока-" + taskId + ": " + completionDelay + " мс");
                 }
             });
         }

@@ -1,4 +1,4 @@
-package ru.rsreu.lab3.entity;
+package ru.rsreu.parallel.entity;
 
 /**
  * Class representing the result of a calculation.

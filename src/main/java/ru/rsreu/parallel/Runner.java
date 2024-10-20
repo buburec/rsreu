@@ -1,9 +1,9 @@
-package ru.rsreu.lab3;
+package ru.rsreu.parallel;
 
 
 
-import ru.rsreu.lab3.entity.ResultWrapper;
-import ru.rsreu.lab3.service.ThreadService;
+import ru.rsreu.parallel.entity.ResultWrapper;
+import ru.rsreu.parallel.service.ThreadService;
 
 import java.util.Scanner;
 

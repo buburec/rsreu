@@ -1,7 +1,6 @@
-package ru.rsreu.lab3.service;
+package ru.rsreu.parallel.service;
 
-import ru.rsreu.lab3.ApplicationContext;
-import ru.rsreu.lab3.entity.LazyStorage;
+import ru.rsreu.parallel.entity.LazyStorage;
 
 /**
  * The IntegralCalculator class is responsible for calculating definite integrals
@@ -16,7 +15,6 @@ import ru.rsreu.lab3.entity.LazyStorage;
  */
 public class IntegralCalculator {
     private final FunctionWrapper function;
-    private static IntegralCalculator instance;
 
     public IntegralCalculator(FunctionWrapper function) {
         this.function = function;
@@ -26,7 +24,7 @@ public class IntegralCalculator {
         double result = 0.0;
         long n = this.function.getN();
         int counter = 0;
-        for (int i = taskId; i < n; i += offset) {
+        for (long i = taskId; i < n; i += offset) {
             if (Thread.interrupted()) {
                 return 0d;
             }

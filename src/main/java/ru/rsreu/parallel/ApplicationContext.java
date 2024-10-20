@@ -1,8 +1,5 @@
-package ru.rsreu.lab3;
+package ru.rsreu.parallel;
 
-import ru.rsreu.lab3.service.FunctionWrapper;
-
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Semaphore;
 
 public class ApplicationContext {
