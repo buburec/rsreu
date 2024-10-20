@@ -56,7 +56,6 @@ public class ThreadService {
         try {
             Double result = function.calculateInitialResult();
             List<Future<Double>> futures = this.executor.invokeAll(tasks);
-            countDownLatch.await();
             for (Future<Double> future : futures) {
                 result += future.get();
             }
@@ -82,13 +81,14 @@ public class ThreadService {
             tasks.add(() -> {
                 semaphore.acquireUninterruptibly();
                 try {
+                    System.out.println("Поток-" + taskId + " начал вычисления");
                    return calculator.calculate(taskId, threadPoolSize);
                 } finally {
-                    semaphore.release();
-
                     long releaseTime = System.nanoTime();
                     countDownLatch.countDown();
                     System.out.println("Поток-" + taskId + " завершил вычисления");
+
+                    semaphore.release();
                     countDownLatch.await();
 
                     long completionDelay = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - releaseTime);
