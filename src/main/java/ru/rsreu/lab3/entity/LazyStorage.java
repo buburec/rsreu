@@ -9,7 +9,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class LazyStorage {
     private static volatile LazyStorage INSTANCE;
     private final double[] threadProgress;
-    private volatile long firstTimeRelease;
     private final Lock lock;
 
     private LazyStorage() {
@@ -38,14 +37,6 @@ public class LazyStorage {
         } finally {
             lock.unlock();
         }
-    }
-
-    public void setFirstTimeRelease(long firstTimeRelease) {
-        this.firstTimeRelease = firstTimeRelease;
-    }
-
-    public long getFirstTimeRelease() {
-        return firstTimeRelease;
     }
 }
 

@@ -56,6 +56,7 @@ public class ThreadService {
         try {
             Double result = function.calculateInitialResult();
             List<Future<Double>> futures = this.executor.invokeAll(tasks);
+            countDownLatch.await();
             for (Future<Double> future : futures) {
                 result += future.get();
             }
@@ -77,20 +78,21 @@ public class ThreadService {
     private List<Callable<Double>> initializeTasks(IntegralCalculator calculator) {
         List<Callable<Double>> tasks = new ArrayList<>();
         for (int i = 0; i < threadPoolSize; i++) {
-            int start = i;
+            int taskId = i;
             tasks.add(() -> {
                 semaphore.acquireUninterruptibly();
                 try {
-                   return calculator.calculate(start, threadPoolSize);
+                   return calculator.calculate(taskId, threadPoolSize);
                 } finally {
                     semaphore.release();
-                    if (countDownLatch.getCount() == threadPoolSize) {
-                       LazyStorage.getInstance().setFirstTimeRelease(System.nanoTime());
-                    }
-                    long firstTime = LazyStorage.getInstance().getFirstTimeRelease();
-                    long timeRelease = System.nanoTime();
-                    System.out.printf("Поток-%d завершил работу за %d нc\n", start, (timeRelease - firstTime));
+
+                    long releaseTime = System.nanoTime();
                     countDownLatch.countDown();
+                    System.out.println("Поток-" + taskId + " завершил вычисления");
+                    countDownLatch.await();
+
+                    long completionDelay = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - releaseTime);
+                    System.out.println("Задержка выполнения работы потока-" + taskId + ": " + completionDelay + " мс");
                 }
             });
         }
