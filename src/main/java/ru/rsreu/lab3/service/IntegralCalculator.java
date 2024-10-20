@@ -22,22 +22,20 @@ public class IntegralCalculator {
         this.function = function;
     }
 
-    public double calculate(int start, int offset) {
+    public double calculate(int taskId, int offset) {
         double result = 0.0;
         long n = this.function.getN();
         int counter = 0;
-        for (int i = start; i < n; i += offset) {
+        for (int i = taskId; i < n; i += offset) {
             if (Thread.interrupted()) {
                 return 0d;
             }
             double x = this.function.calculateX(i);
             result += this.function.apply(x);
-            if (counter % (n / 20) == 0) {
-                LazyStorage.getInstance().update(start, (double) i / n);
+            if (counter++ % (n / 20) == 0) {
+                LazyStorage.getInstance().update(taskId, (double) i / n);
             }
-            counter++;
         }
         return result;
     }
-
 }
