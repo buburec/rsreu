@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|c:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\consoleapplab2\\consoleapplab2\\lexerservice\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|solutionrelative:consoleapplab2\\lexerservice\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|c:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\consoleapplab2\\consoleapplab2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|solutionrelative:consoleapplab2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|c:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\consoleapplab2\\consoleapplab2\\collection\\lexercollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|solutionrelative:consoleapplab2\\collection\\lexercollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|c:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\consoleapplab2\\consoleapplab2\\fileservice\\filewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|solutionrelative:consoleapplab2\\fileservice\\filewriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|c:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\consoleapplab2\\consoleapplab2\\fileservice\\filereader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|solutionrelative:consoleapplab2\\fileservice\\filereader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|c:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\consoleapplab2\\consoleapplab2\\lexerservice\\lexerchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|solutionrelative:consoleapplab2\\lexerservice\\lexerchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|c:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\consoleapplab2\\consoleapplab2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|solutionrelative:consoleapplab2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|c:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\consoleapplab2\\consoleapplab2\\consoleapplab2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{518B3FDF-2459-40DD-A36D-A729053CADFD}|ConsoleAppLab2\\ConsoleAppLab2.csproj|solutionrelative:consoleapplab2\\consoleapplab2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LexerChecker.cs",
+              "DocumentMoniker": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\LexerService\\LexerChecker.cs",
+              "RelativeDocumentMoniker": "ConsoleAppLab2\\LexerService\\LexerChecker.cs",
+              "ToolTip": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\LexerService\\LexerChecker.cs",
+              "RelativeToolTip": "ConsoleAppLab2\\LexerService\\LexerChecker.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T12:30:43.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LexerCollection.cs",
+              "DocumentMoniker": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\Collection\\LexerCollection.cs",
+              "RelativeDocumentMoniker": "ConsoleAppLab2\\Collection\\LexerCollection.cs",
+              "ToolTip": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\Collection\\LexerCollection.cs",
+              "RelativeToolTip": "ConsoleAppLab2\\Collection\\LexerCollection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T20:34:32.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FileWriter.cs",
+              "DocumentMoniker": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\FileService\\FileWriter.cs",
+              "RelativeDocumentMoniker": "ConsoleAppLab2\\FileService\\FileWriter.cs",
+              "ToolTip": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\FileService\\FileWriter.cs",
+              "RelativeToolTip": "ConsoleAppLab2\\FileService\\FileWriter.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAnwBEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T20:26:21.481Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FileReader.cs",
+              "DocumentMoniker": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\FileService\\FileReader.cs",
+              "RelativeDocumentMoniker": "ConsoleAppLab2\\FileService\\FileReader.cs",
+              "ToolTip": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\FileService\\FileReader.cs",
+              "RelativeToolTip": "ConsoleAppLab2\\FileService\\FileReader.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T20:18:35.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ConsoleAppLab2.csproj",
+              "DocumentMoniker": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\ConsoleAppLab2.csproj",
+              "RelativeDocumentMoniker": "ConsoleAppLab2\\ConsoleAppLab2.csproj",
+              "ToolTip": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\ConsoleAppLab2.csproj",
+              "RelativeToolTip": "ConsoleAppLab2\\ConsoleAppLab2.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-07T20:17:47.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ConsoleAppLab2\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ConsoleAppLab2\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-23T19:32:41.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lexer.cs",
+              "DocumentMoniker": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\LexerService\\Lexer.cs",
+              "RelativeDocumentMoniker": "ConsoleAppLab2\\LexerService\\Lexer.cs",
+              "ToolTip": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\LexerService\\Lexer.cs",
+              "RelativeToolTip": "ConsoleAppLab2\\LexerService\\Lexer.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAAAE8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T16:25:17.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleAppLab2\\Program.cs",
+              "ToolTip": "C:\\0.diskd\\radikkk\\\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043A\u043E\u043C\u043F\u0438\u043B\u044F\u0442\u043E\u0440\u043E\u0432\\ConsoleAppLab2\\ConsoleAppLab2\\Program.cs",
+              "RelativeToolTip": "ConsoleAppLab2\\Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T16:05:20.623Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

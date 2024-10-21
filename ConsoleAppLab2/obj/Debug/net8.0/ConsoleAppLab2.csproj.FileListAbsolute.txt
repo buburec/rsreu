@@ -1,0 +1,14 @@
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\bin\Debug\net8.0\ConsoleAppLab2.exe
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\bin\Debug\net8.0\ConsoleAppLab2.deps.json
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\bin\Debug\net8.0\ConsoleAppLab2.runtimeconfig.json
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\bin\Debug\net8.0\ConsoleAppLab2.dll
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\bin\Debug\net8.0\ConsoleAppLab2.pdb
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\ConsoleAppLab2.GeneratedMSBuildEditorConfig.editorconfig
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\ConsoleAppLab2.AssemblyInfoInputs.cache
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\ConsoleAppLab2.AssemblyInfo.cs
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\ConsoleAppLab2.csproj.CoreCompileInputs.cache
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\ConsoleAppLab2.dll
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\refint\ConsoleAppLab2.dll
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\ConsoleAppLab2.pdb
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\ConsoleAppLab2.genruntimeconfig.cache
+C:\0.diskd\radikkk\разработка компиляторов\ConsoleAppLab2\ConsoleAppLab2\obj\Debug\net8.0\ref\ConsoleAppLab2.dll
