@@ -20,7 +20,7 @@ public class IntegralCalculator {
         this.function = function;
     }
 
-    public double calculate(int taskId, int offset) {
+    public double calculate(int taskId, int offset) throws InterruptedException {
         double result = 0.0;
         long n = this.function.getN();
         int counter = 0;

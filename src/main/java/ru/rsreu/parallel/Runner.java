@@ -24,9 +24,8 @@ public class Runner {
         int asyncSize = Integer.parseInt(parameters[3]);
         ApplicationContext.initializeContext(threadPoolSize, asyncSize);
 
-        ThreadService threadService = ThreadService.getInstance();
-        ResultWrapper resultWrapper = threadService.startThreadPool(epsilon);
+        ResultWrapper resultWrapper = ThreadService.getInstance().startThreadPool(epsilon);
         System.out.println(resultWrapper);
-        threadService.stopThreadPool();
+        ThreadService.getInstance().stopThreadPool();
     }
 }

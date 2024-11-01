@@ -1,5 +1,7 @@
 package ru.rsreu.parallel.entity;
 
+import ru.rsreu.parallel.ApplicationContext;
+
 /**
  * Class representing the result of a calculation.
  * It contains the numeric result and a static constant for cases when the calculation was interrupted.
@@ -34,7 +36,6 @@ public class ResultWrapper {
      * Private constructor for the NULL_RESULT constant.
      */
     private ResultWrapper() {
-        // Private to prevent external instantiation.
     }
 
     /**

@@ -1,11 +1,19 @@
 package ru.rsreu.parallel.service;
 
 import ru.rsreu.parallel.ApplicationContext;
+import ru.rsreu.parallel.concurrent.CountDownLatch;
+import ru.rsreu.parallel.concurrent.Semaphore;
 import ru.rsreu.parallel.entity.ResultWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * Service for managing threads that perform integral calculations.
@@ -78,7 +86,7 @@ public class ThreadService {
         for (int i = 0; i < threadPoolSize; i++) {
             int taskId = i;
             tasks.add(() -> {
-                semaphore.acquireUninterruptibly();
+                semaphore.acquire();
                 try {
                     System.out.println("Поток-" + taskId + " начал вычисления");
                     return calculator.calculate(taskId, threadPoolSize);

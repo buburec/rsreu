@@ -1,10 +1,10 @@
 package ru.rsreu.parallel.entity;
 
 import ru.rsreu.parallel.ApplicationContext;
+import ru.rsreu.parallel.concurrent.Lock;
 
 import java.util.Arrays;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+
 
 public class LazyStorage {
     private static volatile LazyStorage INSTANCE;
@@ -13,7 +13,7 @@ public class LazyStorage {
 
     private LazyStorage() {
         this.threadProgress = new double[ApplicationContext.getThreadPoolSize()];
-        this.lock = new ReentrantLock();
+        this.lock = new Lock();
     }
 
     public static LazyStorage getInstance() {
@@ -28,14 +28,16 @@ public class LazyStorage {
         return INSTANCE;
     }
 
-    public void update(int threadId, double part) {
+    public void update(int threadId, double part) throws InterruptedException {
         lock.lock();
+        double overallProgress = 0d;
         try {
             this.threadProgress[threadId] = part;
-            double overallProgress = Arrays.stream(this.threadProgress).average().orElseThrow() * 100;
-            System.out.printf("Общий прогресс: %.2f%%%n", overallProgress);
+            overallProgress = Arrays.stream(this.threadProgress).average().orElseThrow() * 100;
+
         } finally {
             lock.unlock();
+            System.out.printf("Общий прогресс: %.2f%%%n", overallProgress);
         }
     }
 }
